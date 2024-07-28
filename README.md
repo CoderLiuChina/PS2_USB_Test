@@ -18,3 +18,16 @@
 #### 烧录程序
 - 下载器*1
 - 杜邦线若干
+
+## 文件结构
+- Core 单片机核心代码
+- Drivers
+  - CMSIS & STM32F1xx_HAL_Driver CubeMX自动配置，驱动文件
+  - Software 软件驱动包
+    - Delay 时延函数，参考自CSDN，[参考来源](https://blog.csdn.net/zhijianqifei/article/details/127796211)
+    - PS2 手柄信息传输及处理，基于通信协议原创
+    - SPI 软件SPI模拟程序，基于通信协议原创
+  - MDK-ARM 单片机相关，由CubeMX生成
+  - Middlewares USB相关，由CubeMX生成，其中USB传输报文由HID Descriptor Tool生成
+  - USB_DEVICE USB相关，由CubeMX生成
+- PS2_USB_TEST.ioc CubeMX工程文件，可供参考
