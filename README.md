@@ -28,6 +28,6 @@
     - PS2 手柄信息传输及处理，基于通信协议原创
     - SPI 软件SPI模拟程序，基于通信协议原创
   - MDK-ARM 单片机相关，由CubeMX生成
-  - Middlewares USB相关，由CubeMX生成，其中USB传输报文由HID Descriptor Tool生成
+  - Middlewares USB相关，由CubeMX生成，其中USB传输报文由[HID Descriptor Tool](https://www.usb.org/document-library/hid-descriptor-tool)生成
   - USB_DEVICE USB相关，由CubeMX生成
 - PS2_USB_TEST.ioc CubeMX工程文件，可供参考
