@@ -164,7 +164,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void PS2toUSB()
 {
-  USB_Upload_data[5] = (PS2.SELECT << 7) + (PS2.L3 << 6) + (PS2.R3 << 5) + (PS2.START << 4) + (PS2.UP << 3) + (PS2.RIGHT << 2) + (PS2.DOWN << 1) + (PS2.LEFT);
+  USB_Upload_data[5] = (PS2.UP << 7) + (PS2.L3 << 6) + (PS2.SELECT << 5) + (PS2.DOWN << 4) + (PS2.R3 << 3) + (PS2.RIGHT << 2) + (PS2.START << 1) + (PS2.LEFT);
   USB_Upload_data[4] = (PS2.R2 << 7) + (PS2.L2 << 6) + (PS2.R1 << 5) + (PS2.L1 << 4) + (PS2.Y << 3) + (PS2.B << 2) + (PS2.A << 1) + (PS2.X);
   USB_Upload_data[0] = PS2.PSS_LX;
   USB_Upload_data[1] = PS2.PSS_LY;

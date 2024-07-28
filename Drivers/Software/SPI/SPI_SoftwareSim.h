@@ -8,7 +8,6 @@
 
 #include "stm32f1xx_hal.h"
 #include "gpio.h"
-#include "CLKDelay.h"
 #include "delay.h"
 
 #include <string.h>

@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.cpp": "cpp",
+        "spi_softwaresim.h": "c",
+        "usbd_hid.h": "c"
+    }
+}
