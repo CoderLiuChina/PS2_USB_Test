@@ -1,0 +1,22 @@
+{
+    "folders": [
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "commentTranslate.source": "Bing",
+        "commentTranslate.targetLanguage": "en",
+        "files.associations": {
+            "*.cpp": "cpp",
+            "spi_softwaresim.h": "c",
+            "gpio.h": "c",
+            "main.h": "c",
+            "usbd_hid.h": "c",
+            "usb_device.h": "c",
+            "ps2_softwaresim.h": "c"
+        },
+        "cortex-debug.variableUseNaturalFormat": true
+    },
+    "extensions": {}
+}
