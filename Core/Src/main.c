@@ -97,7 +97,12 @@ int main(void)
   MX_USB_DEVICE_Init();
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
-  
+
+  int LXCache = 0;
+  int RXCache = 0;
+  int LYCache = 0;
+  int RYCache = 0;
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -108,6 +113,25 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     PS2_GetData(&PS2);
+
+    // DeadZone
+    if(abs(PS2.PSS_LX-LXCache)>=10||PS2.PSS_LX == 0)
+      LXCache = PS2.PSS_LX;
+    else
+      PS2.PSS_LX = LXCache;
+    if (abs(PS2.PSS_RX - RXCache) >= 10 || PS2.PSS_RX == 0)
+      RXCache = PS2.PSS_RX;
+    else
+      PS2.PSS_RX = RXCache;
+    if (abs(PS2.PSS_RY- RYCache) >= 10 || PS2.PSS_RY == 0)
+      RYCache = PS2.PSS_RY;
+    else
+      PS2.PSS_RY = RYCache;
+    if (abs(PS2.PSS_LY - LYCache) >= 10 || PS2.PSS_LY == 0)
+      LYCache = PS2.PSS_LY;
+    else
+      PS2.PSS_LY = LYCache;
+
     PS2toUSB();
     USBD_HID_SendReport(&hUsbDeviceFS, USB_Upload_data, sizeof(USB_Upload_data));
     HAL_Delay(10);
