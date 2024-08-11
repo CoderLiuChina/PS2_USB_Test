@@ -98,11 +98,6 @@ int main(void)
   MX_TIM2_Init();
   /* USER CODE BEGIN 2 */
 
-  int LXCache = 0;
-  int RXCache = 0;
-  int LYCache = 0;
-  int RYCache = 0;
-
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -115,6 +110,7 @@ int main(void)
     PS2_GetData(&PS2);
 
     // DeadZone
+    /*
     if(abs(PS2.PSS_LX-LXCache)>=10||PS2.PSS_LX == 0)
       LXCache = PS2.PSS_LX;
     else
@@ -131,6 +127,28 @@ int main(void)
       LYCache = PS2.PSS_LY;
     else
       PS2.PSS_LY = LYCache;
+    */
+    if(abs(PS2.PSS_LX-127)<abs(PS2.PSS_LY-127))
+    {
+      if(abs(PS2.PSS_LX)<=abs(PS2.PSS_LY-127)/8)
+        PS2.PSS_LX = 0;
+    }
+    else
+    {
+      if(abs(PS2.PSS_LY)<=abs(PS2.PSS_LX-127)/8)
+        PS2.PSS_LY = 0;
+    }
+
+    if (abs(PS2.PSS_RX - 127) < abs(PS2.PSS_RY - 127))
+    {
+      if (abs(PS2.PSS_RX) <= abs(PS2.PSS_RY - 127) / 8)
+        PS2.PSS_RX = 0;
+    }
+    else
+    {
+      if (abs(PS2.PSS_RY) <= abs(PS2.PSS_RX - 127) / 8)
+        PS2.PSS_RY = 0;
+    }
 
     PS2toUSB();
     USBD_HID_SendReport(&hUsbDeviceFS, USB_Upload_data, sizeof(USB_Upload_data));
@@ -188,8 +206,8 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void PS2toUSB()
 {
-  USB_Upload_data[5] = (PS2.UP << 7) + (PS2.L3 << 6) + (PS2.SELECT << 5) + (PS2.DOWN << 4) + (PS2.R3 << 3) + (PS2.RIGHT << 2) + (PS2.START << 1) + (PS2.LEFT);
-  USB_Upload_data[4] = (PS2.R2 << 7) + (PS2.L2 << 6) + (PS2.R1 << 5) + (PS2.L1 << 4) + (PS2.Y << 3) + (PS2.B << 2) + (PS2.A << 1) + (PS2.X);
+  USB_Upload_data[4] = (PS2.UP) + (PS2.DOWN << 1) + (PS2.LEFT << 2) + (PS2.RIGHT << 3) + (PS2.Y << 4) + (PS2.A << 5) + (PS2.X << 6) + (PS2.B << 7);
+  USB_Upload_data[5] = (PS2.L1) + (PS2.R1 << 1) + (PS2.L2 << 2) + (PS2.R2 << 3) + (PS2.L3 << 4) + (PS2.R3 << 5) + (PS2.SELECT << 6) + (PS2.START << 7);
   USB_Upload_data[0] = PS2.PSS_LX;
   USB_Upload_data[1] = PS2.PSS_LY;
   USB_Upload_data[2] = PS2.PSS_RX;
