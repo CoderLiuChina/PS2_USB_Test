@@ -109,29 +109,6 @@ int main(void)
     /* USER CODE BEGIN 3 */
     PS2_GetData(&PS2);
 
-    // DeadZone
-    if (abs(PS2.PSS_LX - 127) < abs(PS2.PSS_LY - 127))
-    {
-      if (abs(PS2.PSS_LX) <= abs(PS2.PSS_LY - 127) / 8)
-        PS2.PSS_LX = 0;
-    }
-    else
-    {
-      if (abs(PS2.PSS_LY) <= abs(PS2.PSS_LX - 127) / 8)
-        PS2.PSS_LY = 0;
-    }
-
-    if (abs(PS2.PSS_RX - 127) < abs(PS2.PSS_RY - 127))
-    {
-      if (abs(PS2.PSS_RX) <= abs(PS2.PSS_RY - 127) / 8)
-        PS2.PSS_RX = 0;
-    }
-    else
-    {
-      if (abs(PS2.PSS_RY) <= abs(PS2.PSS_RX - 127) / 8)
-        PS2.PSS_RY = 0;
-    }
-
     PS2toUSB();
     USBD_HID_SendReport(&hUsbDeviceFS, USB_Upload_data, sizeof(USB_Upload_data));
     HAL_Delay(10);
