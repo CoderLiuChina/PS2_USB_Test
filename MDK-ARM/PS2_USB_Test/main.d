@@ -45,4 +45,4 @@ ps2_usb_test\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_io
 ps2_usb_test\main.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
 ps2_usb_test\main.o: ../Drivers/Software/PS2/PS2_SoftwareSim.h
 ps2_usb_test\main.o: ../Drivers/Software/SPI/SPI_SoftwareSim.h
-ps2_usb_test\main.o: ../Drivers/Software/CLKDelay/CLKDelay.h
+ps2_usb_test\main.o: ..\Drivers\Software\Delay\delay.h

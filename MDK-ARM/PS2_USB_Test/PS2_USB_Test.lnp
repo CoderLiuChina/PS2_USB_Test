@@ -31,7 +31,7 @@
 "ps2_usb_test\usbd_hid.o"
 "ps2_usb_test\spi_softwaresim.o"
 "ps2_usb_test\ps2_softwaresim.o"
-"ps2_usb_test\clkdelay.o"
+"ps2_usb_test\delay.o"
 --strict --scatter "PS2_USB_Test\PS2_USB_Test.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

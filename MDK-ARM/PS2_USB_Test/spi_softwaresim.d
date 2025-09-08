@@ -32,6 +32,5 @@ ps2_usb_test\spi_softwaresim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll
 ps2_usb_test\spi_softwaresim.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
 ps2_usb_test\spi_softwaresim.o: ../Core/Inc/gpio.h
 ps2_usb_test\spi_softwaresim.o: ../Core/Inc/main.h
-ps2_usb_test\spi_softwaresim.o: ../Drivers/Software/CLKDelay/CLKDelay.h
-ps2_usb_test\spi_softwaresim.o: ../Core/Inc/tim.h
+ps2_usb_test\spi_softwaresim.o: ..\Drivers\Software\Delay\delay.h
 ps2_usb_test\spi_softwaresim.o: E:\Keil v5\ARM\ARMCC\Bin\..\include\string.h

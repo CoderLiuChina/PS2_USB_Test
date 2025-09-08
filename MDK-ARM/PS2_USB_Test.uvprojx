@@ -10,7 +10,7 @@
       <TargetName>PS2_USB_Test</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
-      <pCCUsed>5060750::V5.06 update 6 (build 750)::.\ARMCC</pCCUsed>
+      <pCCUsed>5060960::V5.06 update 7 (build 960)::.\ARMCC</pCCUsed>
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xB</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../USB_DEVICE/App;../USB_DEVICE/Target;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Drivers/Software/PS2;../Drivers/Software/CLKDelay;../Drivers/Software/SPI</IncludePath>
+              <IncludePath>../Core/Inc;../USB_DEVICE/App;../USB_DEVICE/Target;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Middlewares/ST/STM32_USB_Device_Library/Core/Inc;../Middlewares/ST/STM32_USB_Device_Library/Class/HID/Inc;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../Drivers/Software/PS2;../Drivers/Software/SPI;..\Drivers\Software\Delay</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -648,17 +648,17 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Drivers/Software/CLKDelay</GroupName>
+          <GroupName>Drivers/Software/Delay</GroupName>
           <Files>
             <File>
-              <FileName>CLKDelay.c</FileName>
+              <FileName>delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Drivers\Software\CLKDelay\CLKDelay.c</FilePath>
+              <FilePath>..\Drivers\Software\Delay\delay.c</FilePath>
             </File>
             <File>
-              <FileName>CLKDelay.h</FileName>
+              <FileName>delay.h</FileName>
               <FileType>5</FileType>
-              <FilePath>..\Drivers\Software\CLKDelay\CLKDelay.h</FilePath>
+              <FilePath>..\Drivers\Software\Delay\delay.h</FilePath>
             </File>
           </Files>
         </Group>

@@ -473,10 +473,10 @@ ARM Macro Assembler    Page 8
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
 ork --depend=ps2_usb_test\startup_stm32f103xb.d -ops2_usb_test\startup_stm32f10
-3xb.o -I.\RTE\_PS2_USB_Test -IE:\Packs\ARM\CMSIS\5.7.0\CMSIS\Core\Include -IE:\
-Packs\Keil\STM32F1xx_DFP\2.3.0\Device\Include --predefine="__UVISION_VERSION SE
-TA 531" --predefine="_RTE_ SETA 1" --predefine="STM32F10X_MD SETA 1" --predefin
-e="_RTE_ SETA 1" --list=startup_stm32f103xb.lst startup_stm32f103xb.s
+3xb.o -I.\RTE\_PS2_USB_Test -I"E:\Keil v5\ARM\CMSIS\6.1.0\CMSIS\Core\Include" -
+I"E:\Keil v5\Keil\STM32F1xx_DFP\2.4.1\Device\Include" --predefine="__UVISION_VE
+RSION SETA 541" --predefine="STM32F10X_MD SETA 1" --predefine="_RTE_ SETA 1" --
+list=startup_stm32f103xb.lst startup_stm32f103xb.s
 
 
 
